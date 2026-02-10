@@ -325,6 +325,10 @@ header {
     margin-top: var(--space-4);
 }
 
+.menu-item.active {
+    background-color: var(--color-green-100);
+}
+
 .menu-item.active .menu-item-title {
     font-weight: var(--font-weight-semibold);
 }
@@ -1249,6 +1253,11 @@ button:focus,
 input:focus {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+}
+
+/* Remove outline from menu items */
+.menu-item:focus {
+    outline: none;
 }
 
 /* Ensure proper contrast for text */
