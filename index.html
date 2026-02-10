@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curious Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo" onclick="showHome()">
+                    <h1>Curious Studio</h1>
+                </div>
+                <div class="nav-right">
+                    <button class="btn-primary" id="checkAvailabilityBtn" onclick="showAvailability()" style="display: none;">Get in Touch</button>
+                    <button class="icon-btn hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+
+                    <!-- Dropdown Menu -->
+                    <div id="dropdownMenu" class="dropdown-menu">
+        <div class="menu-content">
+            <nav class="menu-nav">
+                <a href="#" class="menu-item" onclick="showPrograms(); closeMenu(); return false;">
+                    <div class="menu-item-content">
+                        <span class="menu-item-title">Programs</span>
+                    </div>
+                </a>
+                <a href="#" class="menu-item" onclick="showBooks(); closeMenu(); return false;">
+                    <div class="menu-item-content">
+                        <span class="menu-item-title">Books</span>
+                    </div>
+                </a>
+                <a href="#" class="menu-item" onclick="showAbout(); closeMenu(); return false;">
+                    <div class="menu-item-content">
+                        <span class="menu-item-title">About</span>
+                    </div>
+                </a>
+
+                <hr class="menu-divider">
+
+                <!-- User Section -->
+                <div id="menuUserSection">
+                    <!-- When logged out -->
+                    <div id="menuLoginSection">
+                        <a href="#" class="menu-item" onclick="showLoginModal(); closeMenu(); return false;">
+                            <div class="menu-item-content">
+                                <span class="menu-item-title">Log in or sign up</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- When logged in -->
+                    <div id="menuUserLoggedIn" style="display: none;">
+                        <a href="#" class="menu-item menu-item-user">
+                            <div class="menu-item-content">
+                                <span class="menu-item-title" id="menuUserName">User</span>
+                            </div>
+                        </a>
+                        <hr class="menu-divider">
+                        <a href="#" class="menu-item" onclick="showMyPrograms(); closeMenu(); return false;">
+                            <div class="menu-item-content">
+                                <span class="menu-item-title">My Programs</span>
+                            </div>
+                        </a>
+                        <a href="#" class="menu-item" onclick="logout(); closeMenu(); return false;">
+                            <div class="menu-item-content">
+                                <span class="menu-item-title">Log Out</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Future items -->
+                <!-- <hr class="menu-divider">
+                <a href="#" class="menu-item">
+                    <div class="menu-item-content">
+                        <span class="menu-item-title">Help Center</span>
+                    </div>
+                </a>
+                <a href="#" class="menu-item">
+                    <div class="menu-item-content">
+                        <span class="menu-item-title">Privacy Policy</span>
+                    </div>
+                </a> -->
+                    </nav>
+                </div>
+            </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- <div id="menuOverlay" class="menu-overlay" onclick="closeMenu()"></div> -->
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="home-section">
+            <div class="container">
+                <div class="home-content">
+                    <div class="home-image">
+                        <img src="images/hero_image.png" alt="Child creating art at Curious Studio">
+                    </div>
+                    <h2 class="home-title"><strong>Curious Studio</strong> is a creative space where children nurture curiosity, build confidence, and cultivate a joy of making.</h2>
+
+                    <div class="home-buttons">
+                        <button class="btn-large btn-primary" onclick="showPrograms()">Programs</button>
+                        <button class="btn-large btn-primary" onclick="showBooks()">Books</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Page -->
+        <section id="programs" class="programs-section" style="display: none;">
+            <div class="container">
+                <!-- Back Button -->
+                <button class="btn-back" onclick="showHome()">← Back to Home</button>
+
+                <!-- Young Artists Studio Program -->
+                <div class="program-detail">
+                    <div class="program-header">
+                        <h2>Young Artists Studio</h2>
+                        <p class="subtitle">Creative Foundations in Art & Artists</p>
+                        <p class="program-meta">Ages 4–6 · 45 minutes · San Diego</p>
+                    </div>
+
+                    <!-- Program Overview -->
+                    <div class="content-block">
+                        <p><strong>Young Artists Studio</strong> is an early childhood art program at Curious Studio where children ages 4–6 explore famous artists through hands-on, open-ended art. In a thoughtfully designed studio environment, children build creative confidence while strengthening focus, fine motor skills, communication, and early problem-solving — all through joyful making.</p>
+                    </div>
+
+                    <!-- Who This Class Is For -->
+                    <div class="content-block">
+                        <h3>Who This Class Is For</h3>
+                        <p>This class is designed for children who:</p>
+                        <ul class="feature-list">
+                            <li>Can comfortably hold and use crayons, colored pencils, and paint brushes</li>
+                            <li>Do not put art materials in their mouth (crayons, paint, brushes, etc.)</li>
+                            <li>Are fully potty trained and able to wash hands independently</li>
+                            <li>Are typically between 4–6 years old, with the class structured around the average developmental range of this age group</li>
+                        </ul>
+                        <p><strong>Drop-off class</strong><br>Parents are welcome to stay and observe or participate if they prefer, but children are encouraged to experience the class independently.</p>
+                    </div>
+
+                    <!-- What We Do in Class -->
+                    <div class="content-block">
+                        <h3>What We Do in Class</h3>
+                        <p>Each session follows a predictable, child-friendly rhythm that supports focus, independence, and confidence:</p>
+
+                        <div class="class-flow">
+                            <p><strong>Class Flow (45 minutes):</strong></p>
+                            <p class="flow-steps">Hello & welcome → Artist of the day → Create → Share & connect → Clean up</p>
+                        </div>
+
+                        <h4>Artist of the Day</h4>
+                        <ul class="feature-list">
+                            <li>Children are introduced to one artist per class through simple, age-appropriate discussion and visuals</li>
+                            <li>We explore how artists use color, shapes, lines, textures, or patterns — no art history lectures, just inspiration</li>
+                        </ul>
+
+                        <h4>Create & Explore</h4>
+                        <ul class="feature-list">
+                            <li>Children create their own artwork inspired by the artist's style</li>
+                            <li>Emphasis is on exploration, decision-making, and choice, not copying or perfection</li>
+                            <li>Every child's artwork looks different — by design</li>
+                        </ul>
+
+                        <h4>Share & Celebrate</h4>
+                        <ul class="feature-list">
+                            <li>At the end of class, children post their artwork on our gallery wall</li>
+                            <li>When parents arrive, children are invited to introduce their work, describe their ideas, and practice speaking in front of others</li>
+                        </ul>
+
+                        <h4>Week-Long Program Experience</h4>
+                        <p>For students enrolled in a 5-day program:</p>
+                        <ul class="feature-list">
+                            <li>Each day features a different artist and artistic approach</li>
+                            <li>On Day 5, children create a final piece using any styles they loved most</li>
+                            <li>Each child selects one favorite artwork to be professionally framed</li>
+                            <li>All artwork created during the week is sent home</li>
+                        </ul>
+                    </div>
+
+                    <!-- Teaching Principles -->
+                    <div class="content-block">
+                        <h3>Our Teaching Principles & Practices</h3>
+                        <p>Our program is thoughtfully designed based on early childhood development research and best practices.</p>
+                        <ul class="benefits-list">
+                            <li><strong>Process over product:</strong> We focus on exploration and creative thinking rather than producing identical artwork.</li>
+                            <li><strong>Small class sizes:</strong> Low child-to-teacher ratios allow for individualized guidance, emotional support, and personalization.</li>
+                            <li><strong>Social learning:</strong> Art becomes a natural setting to practice turn-taking, communication, collaboration, and respect for others' ideas.</li>
+                            <li><strong>Growing independence:</strong> Children practice following multi-step directions, making choices, managing materials, and participating in cleanup.</li>
+                            <li><strong>Age-appropriate structure:</strong> Short, predictable blocks with a clear routine help children feel safe, focused, and successful.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Why Art Matters -->
+                    <div class="content-block highlight-block">
+                        <h3>Why Art Matters (Ages 4–6)</h3>
+                        <p>For young children, art isn't just fun — it supports core development and school readiness:</p>
+                        <ul class="benefits-list">
+                            <li><strong>Fine Motor Skills:</strong> Strengthens hand muscles and coordination needed for writing and everyday self-care</li>
+                            <li><strong>Language & Expression:</strong> Builds vocabulary, storytelling, and confidence through describing ideas and artwork</li>
+                            <li><strong>Emotional Regulation & Confidence:</strong> Supports persistence, flexibility, and pride in one's work</li>
+                            <li><strong>Cognitive & School-Readiness Skills:</strong> Encourages attention, planning, sequencing, problem-solving, and flexible thinking</li>
+                        </ul>
+                        <p>These benefits are supported by trusted early childhood education research (NAEYC, CDC, and early learning frameworks), which emphasize creative play and process-based art as essential to healthy development.</p>
+                    </div>
+
+                    <!-- About the Instructor -->
+                    <div class="content-block instructor-block">
+                        <h3>About the Instructor</h3>
+                        <p><strong>Nuri Kim</strong> believes children learn best when they feel curious, capable, and supported. With a background in education and years of teaching experience, she thoughtfully designs art experiences that meet young children where they are. Drawing from over 15 years of designing innovative products at companies like Uber and Alphabet, she encourages children to experiment, ask questions, and approach art with confidence. She is passionate about creating joyful art experiences that help children think creatively and fall in love with making.</p>
+                        <blockquote>
+                            <p>"Children learn best when they feel curious, capable, and supported."</p>
+                        </blockquote>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cta-section">
+                        <h3>Ready to Get Started?</h3>
+                        <p>Spots are limited. Check availability for our upcoming sessions.</p>
+                        <button class="btn-primary btn-large" onclick="showAvailability()">Get in Touch</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section (Placeholder) -->
+        <section id="books" class="books-section" style="display: none;">
+            <div class="container">
+                <button class="btn-back" onclick="showHome()">← Back to Home</button>
+                <div class="placeholder-content">
+                    <div class="program-illustration">
+                        <img src="images/hero_image2.png" alt="Curious Studio - Child creating and exploring" class="program-hero-image">
+                    </div>
+                    <h2>Books</h2>
+                    <p>Coming soon.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section" style="display: none;">
+            <div class="container">
+                <button class="btn-back" onclick="showHome()">← Back to Home</button>
+                <div class="about-content">
+                    <div class="content-block">
+                        <h2>About Curious Studio</h2>
+
+                        <p>We believe children learn best when they feel curious, capable, and supported. At Curious Studio, we create space for children to ask questions, experiment, take creative risks, and learn through the process of making—not by aiming for perfect results. Art, design, and problem-solving are at the heart of our work, shaping how we invite children to explore ideas and their own creativity.</p>
+
+                        <div class="founder-section">
+                            <img src="images/kim.png" alt="Nuri Kim" class="founder-image">
+                            <div class="founder-text">
+                                <p>Curious Studio was founded by <strong>Nuri Kim</strong>, inspired by her experiences designing new technologies, solving complex problems, and raising a young child. With over 15 years of experience in product design at companies including Uber and Alphabet, along with a background in education and teaching, Nuri brings a thoughtful, human-centered approach to how children learn and create. She holds an MFA from the California College of the Arts and a BA in Education from Korea University.</p>
+                            </div>
+                        </div>
+
+                        <div class="founder-section founder-section-reverse">
+                            <div class="founder-text">
+                                <p>Curious Studio is also shaped by <strong>Sonal Jain</strong>, our Chief Math Officer. He holds a PhD in Mathematics from Harvard University and has worked as a mathematician across academic and applied settings for nearly two decades.  A proud alumnus of a high school math camp in Michigan, Sonal developed his deep love for mathematics through exploration, curiosity, and problem-solving—values that continue to shape Curious Studio today.</p>
+                            </div>
+                            <img src="images/jain.png" alt="Sonal Jain" class="founder-image">
+                        </div>
+
+                        <p>Together, they created Curious Studio as a creative space where children nurture curiosity, build confidence, and cultivate a joy of making.</p>
+
+                        <h3 style="margin-top: var(--space-48);">Our Philosophy</h3>
+                        <p>Nurture curiosity.<br>
+                        Process over perfection.<br>
+                        Joy in making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Programs Section -->
+        <section id="myPrograms" class="my-programs-section" style="display: none;">
+            <div class="container">
+                <button class="btn-back" onclick="showHome()">← Back to Home</button>
+                <div class="my-programs-content">
+                    <h2>My Programs</h2>
+                    <div id="enrolledPrograms" class="enrolled-programs">
+                        <p class="empty-state">You haven't enrolled in any programs yet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Get in Touch -->
+    <div id="availabilityModal" class="modal">
+        <div class="modal-content intake-form-modal">
+            <span class="close" onclick="closeAvailability()">&times;</span>
+
+            <div id="intakeForm">
+                <h2>Get in Touch</h2>
+                <p class="form-intro">We run small-group classes so we can thoughtfully shape each experience. Tell us a little about your child, and we'll follow up personally.</p>
+
+                <form id="contactForm" action="https://formspree.io/f/xzdaddww" method="POST">
+                    <!-- Parent/Caregiver Name -->
+                    <div class="form-group">
+                        <label for="parentName">Parent / Caregiver Name</label>
+                        <p class="field-description">So we know who to say hello to.</p>
+                        <input type="text" id="parentName" name="parentName" required>
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <p class="field-description">We'll use this to follow up with availability and next steps.</p>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- Child's Birth Year and Month -->
+                    <div class="form-group">
+                        <label>Child's Birth Year and Month</label>
+                        <p class="field-description">We are asking the year and month to understand how old they will be when the studio starts.</p>
+                        <div class="birth-date-selectors">
+                            <select id="birthYear" name="birthYear" required>
+                                <option value="">Year</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                            </select>
+                            <select id="birthMonth" name="birthMonth" required>
+                                <option value="">Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Tell us about your child -->
+                    <div class="form-group">
+                        <label for="aboutChild">Tell us a little about your child</label>
+                        <p class="field-description">You can share anything you think is helpful — interests, personality, what they love making, how they approach new activities, or anything else you'd like us to know.</p>
+                        <textarea id="aboutChild" name="aboutChild" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Which time are you interested in? -->
+                    <div class="form-group">
+                        <label>Which time are you interested in?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="timeInterest" value="June 2027">
+                                June 2027
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="timeInterest" value="July 2027">
+                                July 2027
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="timeInterest" value="August 2027">
+                                August 2027
+                            </label>
+                        </div>
+                        <input type="text" id="otherTime" name="otherTime" placeholder="Or type in a different time" style="margin-top: var(--space-12);">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-large" style="width: 100%;">Get in Touch</button>
+                </form>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" style="display: none;">
+                <h2>Thank you for reaching out!</h2>
+                <p class="success-text">We'll read your message and follow up personally to talk about availability and the best fit for your child.</p>
+                <button class="btn-primary" onclick="closeAvailability()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login/Signup Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <div id="loginForm">
+                <h2>Log In</h2>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" style="width: 100%;">Log In</button>
+                </form>
+                <p class="form-toggle">Don't have an account? <a href="#" onclick="showSignupForm(); return false;">Sign Up</a></p>
+            </div>
+            <div id="signupForm" style="display: none;">
+                <h2>Sign Up</h2>
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <label for="signupName">Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupEmail">Email</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" style="width: 100%;">Sign Up</button>
+                </form>
+                <p class="form-toggle">Already have an account? <a href="#" onclick="showLoginForm(); return false;">Log In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Curious Studio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // User state management
+        let currentUser = null;
+        let enrolledPrograms = [];
+
+        // Load user data from localStorage
+        function loadUserData() {
+            const savedUser = localStorage.getItem('currentUser');
+            const savedPrograms = localStorage.getItem('enrolledPrograms');
+
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                updateUIForLoggedInUser();
+            }
+
+            if (savedPrograms) {
+                enrolledPrograms = JSON.parse(savedPrograms);
+            }
+        }
+
+        // Page Navigation
+        function showHome() {
+            hideAllSections();
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('checkAvailabilityBtn').style.display = 'none';
+            document.title = 'Curious Studio';
+            updateActiveNav(null);
+        }
+
+        function showPrograms() {
+            hideAllSections();
+            document.getElementById('programs').style.display = 'block';
+            document.getElementById('checkAvailabilityBtn').style.display = 'inline-block';
+            document.title = 'Programs - Curious Studio';
+            updateActiveNav('programs');
+            window.scrollTo(0, 0);
+        }
+
+        function showBooks() {
+            hideAllSections();
+            document.getElementById('books').style.display = 'block';
+            document.getElementById('checkAvailabilityBtn').style.display = 'none';
+            document.title = 'Books - Curious Studio';
+            updateActiveNav('books');
+            window.scrollTo(0, 0);
+        }
+
+        function showAbout() {
+            hideAllSections();
+            document.getElementById('about').style.display = 'block';
+            document.getElementById('checkAvailabilityBtn').style.display = 'none';
+            document.title = 'About - Curious Studio';
+            updateActiveNav('about');
+            window.scrollTo(0, 0);
+        }
+
+        function showMyPrograms() {
+            hideAllSections();
+            document.getElementById('myPrograms').style.display = 'block';
+            document.getElementById('checkAvailabilityBtn').style.display = 'none';
+            document.title = 'My Programs - Curious Studio';
+            updateActiveNav(null);
+            displayEnrolledPrograms();
+            window.scrollTo(0, 0);
+        }
+
+        function hideAllSections() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('programs').style.display = 'none';
+            document.getElementById('books').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('myPrograms').style.display = 'none';
+        }
+
+        function updateActiveNav(section) {
+            document.querySelectorAll('.menu-item').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            const links = document.querySelectorAll('.menu-item');
+            if (section === 'programs' && links[0]) {
+                links[0].classList.add('active');
+            } else if (section === 'books' && links[1]) {
+                links[1].classList.add('active');
+            } else if (section === 'about' && links[2]) {
+                links[2].classList.add('active');
+            }
+        }
+
+        // Login/Signup Modal
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+            showLoginForm();
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        function showLoginForm() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('signupForm').style.display = 'none';
+        }
+
+        function showSignupForm() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('signupForm').style.display = 'block';
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Simple demo login (in production, this would authenticate with a backend)
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (user) {
+                currentUser = { name: user.name, email: user.email };
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                updateUIForLoggedInUser();
+                closeLoginModal();
+            } else {
+                alert('Invalid email or password. Please try again or sign up.');
+            }
+        }
+
+        function handleSignup(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+
+            // Save user to localStorage (in production, this would be sent to a backend)
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+            if (users.find(u => u.email === email)) {
+                alert('An account with this email already exists. Please log in.');
+                return;
+            }
+
+            users.push({ name, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Auto login after signup
+            currentUser = { name, email };
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            updateUIForLoggedInUser();
+            closeLoginModal();
+        }
+
+        function updateUIForLoggedInUser() {
+            // Update hamburger menu
+            document.getElementById('menuLoginSection').style.display = 'none';
+            document.getElementById('menuUserLoggedIn').style.display = 'block';
+            document.getElementById('menuUserName').textContent = currentUser.name.split(' ')[0];
+        }
+
+        function logout() {
+            currentUser = null;
+            localStorage.removeItem('currentUser');
+            document.getElementById('menuLoginSection').style.display = 'block';
+            document.getElementById('menuUserLoggedIn').style.display = 'none';
+            showHome();
+        }
+
+        // Dropdown Menu Functions
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            const isOpen = menu.classList.contains('open');
+
+            if (isOpen) {
+                closeMenu();
+            } else {
+                menu.classList.add('open');
+            }
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.classList.remove('open');
+        }
+
+        // Availability Modal
+        function showAvailability() {
+            document.getElementById('availabilityModal').style.display = 'block';
+            // Reset form and show intake form
+            document.getElementById('intakeForm').style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('contactForm').reset();
+        }
+
+        function closeAvailability() {
+            document.getElementById('availabilityModal').style.display = 'none';
+        }
+
+        // Handle form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = new FormData(contactForm);
+
+                    // For demonstration, we'll show success message
+                    // In production, this will submit to Formspree
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            // Show success message
+                            document.getElementById('intakeForm').style.display = 'none';
+                            document.getElementById('successMessage').style.display = 'block';
+                        } else {
+                            alert('Oops! There was a problem submitting your form. Please try again.');
+                        }
+                    }).catch(error => {
+                        // For now, show success anyway (until Formspree is set up)
+                        document.getElementById('intakeForm').style.display = 'none';
+                        document.getElementById('successMessage').style.display = 'block';
+                    });
+                });
+            }
+        });
+
+        function displayEnrolledPrograms() {
+            const container = document.getElementById('enrolledPrograms');
+
+            if (enrolledPrograms.length === 0) {
+                container.innerHTML = '<p class="empty-state">You haven\'t enrolled in any programs yet. <a href="#" onclick="showPrograms(); return false;">Browse Programs</a></p>';
+            } else {
+                let html = '<div class="program-cards">';
+                enrolledPrograms.forEach((program, index) => {
+                    html += `
+                        <div class="program-card">
+                            <h3>${program.name}</h3>
+                            <p><strong>Week:</strong> ${program.week}</p>
+                            <p><strong>Enrolled:</strong> ${program.enrolledDate}</p>
+                            <button class="btn-remove" onclick="removeProgram(${index})">Remove</button>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+                container.innerHTML = html;
+            }
+        }
+
+        function removeProgram(index) {
+            if (confirm('Are you sure you want to remove this program from your enrollment?')) {
+                enrolledPrograms.splice(index, 1);
+                localStorage.setItem('enrolledPrograms', JSON.stringify(enrolledPrograms));
+                displayEnrolledPrograms();
+            }
+        }
+
+        // Close modals when clicking outside
+        window.onclick = function(event) {
+            const availModal = document.getElementById('availabilityModal');
+            const loginModal = document.getElementById('loginModal');
+
+            if (event.target == availModal) {
+                closeAvailability();
+            }
+            if (event.target == loginModal) {
+                closeLoginModal();
+            }
+        }
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeMenu();
+            }
+        });
+
+
+        // Initialize
+        document.querySelector('.logo').style.cursor = 'pointer';
+        loadUserData();
+    </script>
+</body>
+</html>
