@@ -15,6 +15,7 @@
                     <h1>Curious Studio</h1>
                 </div>
                 <div class="nav-right">
+                    <button class="btn-primary" id="getInTouchBtn" onclick="showAvailability()" style="display: none;">Get in Touch</button>
                     <button class="icon-btn hamburger-btn" onclick="toggleMenu()" aria-label="Menu">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -431,6 +432,7 @@
             closeMenu();
             hideAllSections();
             document.getElementById('home').style.display = 'block';
+            document.getElementById('getInTouchBtn').style.display = 'none';
             document.title = 'Curious Studio';
             updateActiveNav(null);
         }
@@ -439,6 +441,7 @@
             closeMenu();
             hideAllSections();
             document.getElementById('programs').style.display = 'block';
+            document.getElementById('getInTouchBtn').style.display = 'inline-block';
             document.title = 'Programs - Curious Studio';
             updateActiveNav('programs');
             window.scrollTo(0, 0);
@@ -448,6 +451,7 @@
             closeMenu();
             hideAllSections();
             document.getElementById('books').style.display = 'block';
+            document.getElementById('getInTouchBtn').style.display = 'none';
             document.title = 'Books - Curious Studio';
             updateActiveNav('books');
             window.scrollTo(0, 0);
@@ -457,6 +461,7 @@
             closeMenu();
             hideAllSections();
             document.getElementById('about').style.display = 'block';
+            document.getElementById('getInTouchBtn').style.display = 'none';
             document.title = 'About - Curious Studio';
             updateActiveNav('about');
             window.scrollTo(0, 0);
