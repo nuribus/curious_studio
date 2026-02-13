@@ -83,13 +83,47 @@
             </div>
         </section>
 
-        <!-- Programs Page -->
+        <!-- Programs Listing Page -->
         <section id="programs" class="programs-section" style="display: none;">
             <div class="container">
                 <!-- Back Button -->
                 <button class="btn-back" onclick="showHome()">← Back to Home</button>
 
-                <!-- Young Artists Studio Program -->
+                <div class="programs-listing">
+                    <h2>Our Programs</h2>
+                    <p class="section-intro">Small-group classes designed to nurture curiosity, build confidence, and cultivate a joy of making.</p>
+
+                    <!-- Program Cards -->
+                    <div class="program-cards">
+                        <!-- Young Artists Studio Card -->
+                        <div class="program-card clickable" onclick="showProgramDetail('young-artists')">
+                            <h3>Young Artists Studio</h3>
+                            <p class="program-meta">Ages 4–6 · 45 minutes · San Diego</p>
+                            <p class="program-description">An early childhood art program where children explore famous artists through hands-on, open-ended art. Build creative confidence while strengthening focus, fine motor skills, and communication.</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+
+                        <!-- Inventor Studio Card -->
+                        <div class="program-card clickable" onclick="showProgramDetail('inventor-studio')">
+                            <h3>Inventor Studio</h3>
+                            <p class="program-meta">Ages 7–10 · 50 minutes · San Diego</p>
+                            <p class="program-description">A small-group lab where children learn to turn ideas into purposeful creations. Through questioning, sketching, and prototyping, students explore how objects and systems are designed.</p>
+                            <span class="learn-more">Learn more →</span>
+                        </div>
+
+                        <!-- Placeholder for future programs -->
+                        <!-- Add more program cards here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Young Artists Studio Detail Page -->
+        <section id="program-young-artists" class="program-detail-section" style="display: none;">
+            <div class="container">
+                <!-- Back Button -->
+                <button class="btn-back" onclick="showPrograms()">← Back to Programs</button>
+
                 <div class="program-detail">
                     <div class="program-header">
                         <h2>Young Artists Studio</h2>
@@ -193,7 +227,124 @@
                     <div class="cta-section">
                         <h3>Ready to Get Started?</h3>
                         <p>Spots are limited. Check availability for our upcoming sessions.</p>
-                        <button class="btn-primary btn-large" onclick="showAvailability()">Get in Touch</button>
+                        <button class="btn-primary btn-large" onclick="showAvailability('Young Artists Studio')">Get in Touch</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inventor Studio Detail Page -->
+        <section id="program-inventor-studio" class="program-detail-section" style="display: none;">
+            <div class="container">
+                <!-- Back Button -->
+                <button class="btn-back" onclick="showPrograms()">← Back to Programs</button>
+
+                <div class="program-detail">
+                    <div class="program-header">
+                        <h2>Inventor Studio</h2>
+                        <p class="subtitle">Thinking Through Making</p>
+                        <p class="program-meta">Ages 7–10 · 50 minutes · San Diego</p>
+                    </div>
+
+                    <!-- Program Overview -->
+                    <div class="content-block">
+                        <p><strong>Inventor Studio</strong> is a small-group lab where children learn to turn ideas into purposeful creations. Through questioning, sketching, and prototyping, students explore how objects and systems are designed — and build thoughtful solutions of their own.</p>
+                    </div>
+
+                    <!-- Who This Class Is For -->
+                    <div class="content-block">
+                        <h3>Who This Class Is For</h3>
+                        <p>Inventor Studio is designed for children who:</p>
+                        <ul class="feature-list">
+                            <li>Can follow multi-step directions independently</li>
+                            <li>Can use scissors and basic tools safely</li>
+                            <li>Enjoy asking "why" and thinking about how things work</li>
+                            <li>Are typically between <strong>7–10 years old</strong>, with the class structured around the developmental range of this age group</li>
+                        </ul>
+                        <p>Reading and writing skills vary at this age, and that's completely normal. Instructions are provided verbally and visually, and students are supported in expressing ideas in ways that work best for them.</p>
+                    </div>
+
+                    <!-- How the Program Works -->
+                    <div class="content-block">
+                        <h3>How the Program Works</h3>
+                        <p>Inventor Studio includes two complementary tracks:</p>
+                        <ul class="feature-list">
+                            <li><strong>Object Lab</strong> — Designing tangible, everyday objects</li>
+                            <li><strong>Systems Lab</strong> — Designing rules, structures, and invisible systems</li>
+                        </ul>
+                        <p>Both tracks follow a structured creative process:</p>
+                        <div class="class-flow">
+                            <p class="flow-steps">Observe → Question → Define Purpose → Sketch → Prototype → Share → Clean</p>
+                        </div>
+                        <p>Students are guided step-by-step through this process, building independence and confidence along the way.</p>
+                    </div>
+
+                    <!-- Track 1: Object Lab -->
+                    <div class="content-block">
+                        <h3>Track 1: Object Lab</h3>
+                        <h4>Designing Everyday Things</h4>
+                        <p>In Object Lab, students examine familiar objects and rethink their function, form, and purpose.</p>
+
+                        <h4>What Happens in Class</h4>
+                        <p>Each session focuses on one everyday object — such as a kettle, chair, spoon, bag, or clock.</p>
+                        <p><strong>Students:</strong></p>
+                        <ol class="feature-list">
+                            <li><strong>Observe & Interact</strong> — Handle and analyze the object, identify how it works, discuss the problem it solves</li>
+                            <li><strong>Define Purpose</strong> — What need does this object address? Who is it designed for? What constraints or trade-offs exist?</li>
+                            <li><strong>Ideate & Sketch</strong> — Generate multiple ideas, sketch redesigned versions, add written notes explaining features and purpose</li>
+                            <li><strong>Prototype</strong> — Build a functional or structural model using materials such as cardboard, clay, paper, fabric, and found objects</li>
+                            <li><strong>Share</strong> — Explain their thinking, describe the problem they aimed to solve, discuss possible improvements</li>
+                        </ol>
+                        <p>The focus is clarity of thinking — not aesthetic perfection.</p>
+                    </div>
+
+                    <!-- Track 2: Systems Lab -->
+                    <div class="content-block">
+                        <h3>Track 2: Systems Lab</h3>
+                        <h4>Designing Rules & Structures</h4>
+                        <p>In Systems Lab, students design intangible systems — the invisible frameworks that shape how we live, move, and interact.</p>
+
+                        <h4>What Happens in Class</h4>
+                        <p>Each session explores a system such as: Traffic light systems, Timers, Board game rules, Birthday party schedules, Trip planning structures, App concepts</p>
+                        <p><strong>Students:</strong></p>
+                        <ol class="feature-list">
+                            <li><strong>Analyze the System</strong> — What rules make this work? How do people interact with it? What happens if something changes?</li>
+                            <li><strong>Identify Goals</strong> — What is this system trying to accomplish? Who benefits from it? What challenges might exist?</li>
+                            <li><strong>Design Their Own Version</strong> — Modify or redesign the system, clarify new rules and structure</li>
+                            <li><strong>Map the Logic</strong> — Diagram how it works step-by-step, identify cause-and-effect relationships</li>
+                            <li><strong>Prototype & Share</strong> — Create visual models, flowcharts, rule cards, or mock interfaces; explain reasoning and design choices</li>
+                        </ol>
+                        <p>Systems Lab strengthens structured reasoning and multi-step thinking in a concrete, age-appropriate way.</p>
+                    </div>
+
+                    <!-- Why This Matters -->
+                    <div class="content-block">
+                        <h3>Why This Matters</h3>
+                        <p>At ages 7–10, children are developing stronger logical reasoning and structured thinking. Inventor Studio channels that growth into purposeful creativity.</p>
+                        <ul class="feature-list">
+                            <li><strong>Purpose-driven thinking</strong> — identifying real problems and defining clear goals</li>
+                            <li><strong>Logical reasoning</strong> — thinking step-by-step and understanding cause and effect</li>
+                            <li><strong>Executive function</strong> — planning, organizing, and following through</li>
+                            <li><strong>Creative confidence</strong> — turning ideas into tangible solutions</li>
+                            <li><strong>Communication skills</strong> — explaining and defending their thinking</li>
+                        </ul>
+                        <p>In a world increasingly shaped by automation, the ability to define problems and design thoughtful solutions remains essential. Inventor Studio nurtures those capacities — through making.</p>
+                    </div>
+
+                    <!-- About the Instructor -->
+                    <div class="content-block instructor-block">
+                        <h3>About the Instructor</h3>
+                        <p><strong>Nuri Kim</strong> believes children learn best when they feel curious, capable, and supported. With a background in education and years of teaching experience, she thoughtfully designs art experiences that meet young children where they are. Drawing from over 15 years of designing innovative products at companies like Uber and Alphabet, she encourages children to experiment, ask questions, and approach art with confidence. She is passionate about creating joyful art experiences that help children think creatively and fall in love with making.</p>
+                        <blockquote>
+                            <p>"Children learn best when they feel curious, capable, and supported."</p>
+                        </blockquote>
+                    </div>
+
+                    <!-- CTA Section -->
+                    <div class="cta-section">
+                        <h3>Ready to Get Started?</h3>
+                        <p>Spots are limited. Check availability for our upcoming sessions.</p>
+                        <button class="btn-primary btn-large" onclick="showAvailability('Inventor Studio')">Get in Touch</button>
                     </div>
                 </div>
             </div>
@@ -284,6 +435,17 @@
                         <label for="email">Email Address</label>
                         <p class="field-description">We'll use this to follow up with availability and next steps.</p>
                         <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <!-- Which Program -->
+                    <div class="form-group">
+                        <label for="programInterest">Which program are you interested in?</label>
+                        <select id="programInterest" name="programInterest" required>
+                            <option value="">Select a program</option>
+                            <option value="Young Artists Studio">Young Artists Studio (Ages 4-6)</option>
+                            <option value="Inventor Studio">Inventor Studio (Ages 7-10)</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                        </select>
                     </div>
 
                     <!-- Child's Birth Year and Month -->
@@ -411,6 +573,7 @@
         // User state management
         let currentUser = null;
         let enrolledPrograms = [];
+        let currentProgram = '';
 
         // Load user data from localStorage
         function loadUserData() {
@@ -441,8 +604,34 @@
             closeMenu();
             hideAllSections();
             document.getElementById('programs').style.display = 'block';
-            document.getElementById('getInTouchBtn').style.display = 'inline-block';
+            document.getElementById('getInTouchBtn').style.display = 'none';
             document.title = 'Programs - Curious Studio';
+            updateActiveNav('programs');
+            window.scrollTo(0, 0);
+        }
+
+        function showProgramDetail(programId) {
+            hideAllSections();
+            document.getElementById('program-' + programId).style.display = 'block';
+            document.getElementById('getInTouchBtn').style.display = 'inline-block';
+
+            // Set page title and current program based on programId
+            const programTitles = {
+                'young-artists': 'Young Artists Studio - Curious Studio',
+                'inventor-studio': 'Inventor Studio - Curious Studio'
+            };
+            const programNames = {
+                'young-artists': 'Young Artists Studio',
+                'inventor-studio': 'Inventor Studio'
+            };
+
+            document.title = programTitles[programId] || 'Programs - Curious Studio';
+            currentProgram = programNames[programId] || '';
+
+            // Update header button onclick
+            const headerBtn = document.getElementById('getInTouchBtn');
+            headerBtn.onclick = function() { showAvailability(currentProgram); };
+
             updateActiveNav('programs');
             window.scrollTo(0, 0);
         }
@@ -480,6 +669,8 @@
         function hideAllSections() {
             document.getElementById('home').style.display = 'none';
             document.getElementById('programs').style.display = 'none';
+            document.getElementById('program-young-artists').style.display = 'none';
+            document.getElementById('program-inventor-studio').style.display = 'none';
             document.getElementById('books').style.display = 'none';
             document.getElementById('about').style.display = 'none';
             document.getElementById('myPrograms').style.display = 'none';
@@ -596,12 +787,17 @@
         }
 
         // Availability Modal
-        function showAvailability() {
+        function showAvailability(programName = '') {
             document.getElementById('availabilityModal').style.display = 'block';
             // Reset form and show intake form
             document.getElementById('intakeForm').style.display = 'block';
             document.getElementById('successMessage').style.display = 'none';
             document.getElementById('contactForm').reset();
+
+            // Pre-select program if specified
+            if (programName) {
+                document.getElementById('programInterest').value = programName;
+            }
         }
 
         function closeAvailability() {
